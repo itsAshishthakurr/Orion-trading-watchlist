@@ -1,0 +1,155 @@
+# 🧩 How to Install ORION (Super Simple Guide)
+
+Don’t worry if you’ve never done this before.
+Just follow step by step. No coding needed.
+
+---
+
+## 🧱 Step 1 — Download the Project
+
+1. Open this GitHub page (where you see this README)
+
+2. Look for a green button that says:
+
+👉 **Code**
+
+3. Click it → then click:
+
+👉 **Download ZIP**
+
+4. After downloading:
+
+   * Go to your Downloads folder
+   * Right-click the ZIP file
+   * Click **Extract All**
+
+Now you will get a normal folder.
+
+Inside it, you should see files like:
+
+* manifest.json
+* sidepanel.js
+* sidepanel.html
+
+👉 If you see these files, you're good.
+
+---
+
+## 🌐 Step 2 — Open Extensions Page
+
+Open your browser (Chrome / Brave / Edge)
+
+In the address bar (top), type:
+
+```id="chromeext"
+chrome://extensions/
+```
+
+Press Enter
+
+---
+
+## ⚙️ Step 3 — Turn ON Developer Mode
+
+On the top right side of the page:
+
+👉 Turn ON **Developer Mode**
+
+(New buttons will appear)
+
+---
+
+## 📂 Step 4 — Install ORION
+
+1. Click:
+
+👉 **Load unpacked**
+
+2. A folder window will open
+
+3. Select the folder you extracted (NOT the ZIP)
+
+4. Click **Select Folder**
+
+---
+
+✅ Done. ORION is now installed.
+
+---
+
+## 🚀 Step 5 — Open ORION
+
+1. Look at top right of your browser
+2. Click the **Extensions icon (🧩)**
+3. Find **ORION**
+4. Click it
+
+👉 You can also click the 📌 icon to pin it
+
+---
+
+## 📊 Step 6 — Use It
+
+1. Open **TradingView**
+2. Open any chart (like SBIN or NIFTY)
+3. Open ORION
+
+Click:
+
+👉 ⚡ **Capture**
+
+It will automatically detect the stock.
+
+Then:
+
+👉 Add folder name
+👉 Click 💾 Save
+
+Done.
+
+---
+
+## 🧠 That’s it
+
+You now have your own watchlist system.
+
+No premium. No limits.
+
+---
+
+## ❓ What About “git clone”?
+
+You don’t need it.
+
+But if you're curious:
+
+“git clone” is used in something called **Command Prompt / Terminal**.
+
+Example:
+
+```id="gitcmd"
+git clone https://github.com/your-repo-link.git
+```
+
+Where does this work?
+
+* Windows → Command Prompt (cmd) or PowerShell
+* Mac → Terminal
+* Linux → Terminal
+
+But again:
+
+👉 You don’t need this at all
+👉 Just use **Download ZIP**
+
+---
+
+## 🧭 If You Get Stuck
+
+Just check:
+
+* Did you extract the ZIP?
+* Did you select the correct folder?
+* Is Developer Mode ON?
+
+That’s usually all.

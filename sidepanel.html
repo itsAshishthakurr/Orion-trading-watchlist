@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>ORION</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="header">
+    <h1 id="brandTitle">ORION</h1>
+    <button id="themeToggle" class="icon-btn" title="Edit Theme">✏️</button>
+  </div>
+
+  <div id="themePanel" class="theme-panel hidden">
+
+    <div class="theme-section">
+      <h5>Title</h5>
+      <div class="color-row">
+        <label>Color</label>
+        <input type="color" id="titleColorPicker">
+        <input type="text" id="titleHex" placeholder="#e8f4e8" maxlength="7">
+      </div>
+      <div class="color-row">
+        <label>Glass Mode</label>
+        <button id="glassModeBtn" class="glass-btn">Enable Glass</button>
+      </div>
+    </div>
+
+    <div class="theme-section">
+      <h5>Accent Color</h5>
+      <div class="color-row">
+        <label>Accent</label>
+        <input type="color" id="accentPicker">
+        <input type="text" id="accentHex" placeholder="#2a8f2a" maxlength="7">
+      </div>
+    </div>
+
+    <div class="theme-section">
+      <h5>Button Colors</h5>
+      <div class="color-row">
+        <label>Capture</label>
+        <input type="color" id="captureBtnPicker">
+        <input type="text" id="captureBtnHex" maxlength="7">
+      </div>
+      <div class="color-row">
+        <label>Save</label>
+        <input type="color" id="saveBtnPicker">
+        <input type="text" id="saveBtnHex" maxlength="7">
+      </div>
+    </div>
+
+    <div class="theme-section">
+      <h5>Input Colors</h5>
+      <div class="color-row">
+        <label>Symbol</label>
+        <input type="color" id="symbolInputPicker">
+        <button class="reset-btn" data-target="symbolInput">↺</button>
+      </div>
+      <div class="color-row">
+        <label>Folder</label>
+        <input type="color" id="folderInputPicker">
+        <button class="reset-btn" data-target="folderInput">↺</button>
+      </div>
+      <div class="color-row">
+        <label>Tags</label>
+        <input type="color" id="tagsInputPicker">
+        <button class="reset-btn" data-target="tagsInput">↺</button>
+      </div>
+      <div class="color-row">
+        <label>Notes</label>
+        <input type="color" id="notesInputPicker">
+        <button class="reset-btn" data-target="notesInput">↺</button>
+      </div>
+    </div>
+
+    <div class="theme-section">
+      <h5>Background</h5>
+      <div class="color-row">
+        <label>Base Color</label>
+        <input type="color" id="bgColorPicker">
+        <input type="text" id="bgColorHex" placeholder="#080c14" maxlength="7">
+      </div>
+      <div class="color-row">
+        <label>Image</label>
+        <label class="glass-btn" style="cursor:pointer">
+          🖼 Upload
+          <input type="file" id="bgUpload" accept="image/*" style="display:none">
+        </label>
+      </div>
+      <div class="color-row">
+        <label>Fit</label>
+        <select id="bgFit">
+          <option value="cover">Cover</option>
+          <option value="contain">Contain</option>
+          <option value="repeat">Repeat</option>
+          <option value="100% 100%">Stretch</option>
+        </select>
+      </div>
+      <div class="color-row">
+        <label>Position</label>
+        <select id="bgPosition">
+          <option value="center top">Top</option>
+          <option value="center center">Center</option>
+          <option value="center bottom">Bottom</option>
+        </select>
+      </div>
+      <button id="removeBgBtn" class="glass-btn" style="margin-top:8px; width:100%">🗑 Remove Image</button>
+    </div>
+
+    <div class="theme-section">
+      <h5>Font Size</h5>
+      <div class="color-row">
+        <label id="fontSizeLabel">14px</label>
+        <input type="range" id="fontSizeSlider" min="12" max="18" value="14" style="flex:1">
+      </div>
+    </div>
+
+  </div>
+
+  <div class="controls">
+    <input type="text" id="symbol" placeholder="Symbol (e.g. NSE:NIFTY)">
+    <button id="captureBtn" class="primary-btn">⚡ Capture</button>
+    <input type="text" id="folder" placeholder="Folder name">
+    <input type="text" id="tags" placeholder="Tags (comma separated)">
+    <textarea id="notes" placeholder="Notes..."></textarea>
+    <button id="saveBtn" class="primary-btn">💾 Save</button>
+  </div>
+
+  <input type="text" id="searchBar" placeholder="🔍 Search symbol & notes...">
+  <input type="text" id="tagFilter" placeholder="🏷 Filter by tag...">
+
+  <div id="foldersContainer"></div>
+
+  <div id="brokersPanel" class="brokers-panel hidden">
+    <div class="brokers-header">
+      <span>Brokers</span>
+      <button id="addBrokerBtn" class="glass-btn">+ Add</button>
+    </div>
+    <div id="brokersList"></div>
+    <div id="addBrokerForm" class="hidden">
+      <input type="text" id="brokerName" placeholder="Broker name (e.g. Zerodha)">
+      <select id="brokerType">
+        <option value="standard">Standard — URL with {symbol}</option>
+        <option value="search">Search-based — appends symbol to search</option>
+      </select>
+      <input type="text" id="brokerUrl" placeholder="e.g. https://kite.zerodha.com/chart/ext/ciq/NSE/{symbol}/1D">
+      <p class="broker-hint" id="brokerHint">
+        Use <b>{symbol}</b> for ticker only (e.g. RELIANCE)<br>
+        Use <b>{fullsymbol}</b> for exchange:ticker (e.g. NSE:RELIANCE)
+      </p>
+      <button id="saveBrokerBtn" class="glass-btn">Save Broker</button>
+    </div>
+  </div>
+
+  <button id="brokersToggle" class="fab fab-left" title="Brokers">🏦</button>
+  <label class="fab fab-right" title="Background Image">
+    🖼<input type="file" id="bgUpload2" accept="image/*" style="display:none">
+  </label>
+
+  <script src="sidepanel.js"></script>
+</body>
+</html>
